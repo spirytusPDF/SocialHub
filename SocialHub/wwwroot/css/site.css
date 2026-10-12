@@ -1,0 +1,150 @@
+
+body {
+    font-family: "Tahoma", "Segoe UI", "Trebuchet MS", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0054e3;
+    background: linear-gradient(180deg, #4da1f7 0%, #0054e3 40%, #0043b3 70%, #2f8e1c 100%);
+    background-attachment: fixed;
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+    background: linear-gradient(180deg, #99c8fc 0%, #3f8cf3 40%, #0054e3 45%, #003db3 100%);
+    border-bottom: 2px solid #002266;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+    color: white;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .name h1 {
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        letter-spacing: 0.5px;
+    }
+
+    .name img {
+        height: 32px;
+        filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.5));
+    }
+
+.searchBar form {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.searchBar input {
+    border: 1px solid #7a9ea1;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 6px 12px;
+    font-family: "Tahoma", sans-serif;
+    color: #333;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+    .searchBar input:focus {
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 8px #7bb2ec;
+        border-color: #3f8cf3;
+    }
+
+.searchBar button, .newPost a {
+    background: linear-gradient(180deg, #b8e1fc 0%, #6ea4ed 45%, #2c72df 50%, #1555c0 100%);
+    border: 1px solid #0a246a;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.9), 0 2px 4px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 5px;
+    transition: all 0.1s ease;
+}
+
+    .searchBar button img, .newPost a img {
+        height: 18px;
+        filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.5));
+    }
+
+    .searchBar button:hover, .newPost a:hover {
+        background: linear-gradient(180deg, #d3efff 0%, #89bef5 45%, #3f8cf3 50%, #206bd4 100%);
+    }
+
+    .searchBar button:active, .newPost a:active {
+        background: linear-gradient(180deg, #1555c0 0%, #2c72df 45%, #6ea4ed 50%, #b8e1fc 100%);
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6);
+    }
+
+.container {
+    flex: 1;
+    max-width: 960px;
+    margin: 30px auto;
+    width: 100%;
+}
+
+main {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px); 
+}
+
+footer {
+    background: linear-gradient(180deg, #51cc20 0%, #309509 45%, #257a04 50%, #1b5b03 100%);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    border-top: 1px solid #82e25c;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 20px 40px;
+    text-align: center;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+    margin-top: 40px;
+}
+
+    footer h2 {
+        font-size: 1.2rem;
+        margin-top: 0;
+    }
+
+        footer h2 span {
+            color: #e0f4ff;
+            font-style: italic;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        }
+
+    footer p {
+        font-size: 0.85rem;
+        color: #d8f3ce;
+        line-height: 1.5;
+        max-width: 800px;
+        margin: 0 auto;
+    }

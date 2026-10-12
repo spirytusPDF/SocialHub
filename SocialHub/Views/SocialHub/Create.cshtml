@@ -1,0 +1,53 @@
+﻿@model Post
+
+@{
+	Layout = "_Layout";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/create.css" />
+}
+<div class="create-post-container">
+    <div class="xp-window">
+
+        <div class="xp-titlebar">
+            <div class="xp-title">
+                <img src="~/icons/picture.png" alt="Icon" class="xp-icon" />
+                <span>Compose New Post - SocialHub</span>
+            </div>
+            <div class="xp-controls">
+                <a href="/SocialHub/Posts" class="xp-close-btn" title="Cancel">X</a>
+            </div>
+        </div>
+
+        <div class="xp-window-body">
+            <form asp-action="Create" class="xp-form">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <input type="hidden" asp-for="CreatedAt" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")" />
+
+                <div class="xp-form-group">
+                    <label asp-for="Author" class="xp-label">Your Name:</label>
+                    <input asp-for="Author" class="xp-input" placeholder="e.g. John Doe" required />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+
+                <div class="xp-form-group">
+                    <label asp-for="Title" class="xp-label">Post Title:</label>
+                    <input asp-for="Title" class="xp-input" placeholder="What's on your mind?" required />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="xp-form-group">
+                    <label asp-for="Text" class="xp-label">Message:</label>
+                    <textarea asp-for="Text" class="xp-input xp-textarea" rows="6" placeholder="Type your message here..." required></textarea>
+                    <span asp-validation-for="Text" class="text-danger"></span>
+                </div>
+
+                <div class="xp-form-actions">
+                    <button type="submit" class="xp-btn-submit">Post to SocialHub</button>
+                    <a href="/SocialHub/Posts" class="xp-btn-cancel">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

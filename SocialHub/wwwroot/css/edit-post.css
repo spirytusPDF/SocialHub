@@ -1,0 +1,163 @@
+﻿/
+.edit-post-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.xp-window {
+    width: 100%;
+    max-width: 550px;
+    background: #ece9d8;
+    border: 1px solid #00138c;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    font-family: "Tahoma", sans-serif;
+}
+
+.xp-titlebar {
+    background: linear-gradient(180deg, #0058ee 0%, #3593ff 8%, #288eff 40%, #127dff 88%, #036bba 100%);
+    padding: 5px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    text-shadow: 1px 1px 2px #0f1089;
+    border-bottom: 1px solid #00138c;
+}
+
+.xp-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.xp-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.xp-close-btn {
+    background: linear-gradient(180deg, #e3a99a 0%, #e06354 10%, #d84534 45%, #ca3021 55%, #c5291b 100%);
+    border: 1px solid white;
+    border-radius: 3px;
+    color: white;
+    font-family: "Franklin Gothic Medium", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    width: 21px;
+    height: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 -1px 2px rgba(0,0,0,0.3), 1px 1px 2px rgba(0,0,0,0.4);
+    transition: all 0.1s;
+}
+
+    .xp-close-btn:hover {
+        background: linear-gradient(180deg, #f5c4b8 0%, #f08376 10%, #e86052 45%, #dc4637 55%, #d5392a 100%);
+        color: white;
+    }
+
+.xp-window-body {
+    padding: 20px;
+    border: 2px solid #ffffff;
+    border-bottom: none;
+    border-right: none;
+}
+
+.xp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.xp-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.xp-label {
+    font-size: 0.9rem;
+    color: #000;
+}
+
+.xp-input {
+    border: 1px solid #7f9db9;
+    padding: 6px 10px;
+    font-family: "Tahoma", sans-serif;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+    .xp-input:focus {
+        border-color: #3f8cf3;
+        box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.15), 0 0 5px rgba(63, 140, 243, 0.5);
+    }
+
+.xp-textarea {
+    resize: vertical;
+}
+
+.xp-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px groove #ffffff;
+}
+
+.xp-btn-submit, .xp-btn-cancel {
+    font-family: "Tahoma", sans-serif;
+    font-size: 0.9rem;
+    padding: 6px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.xp-btn-submit {
+    background: linear-gradient(180deg, #d3eebc 0%, #90d15e 45%, #76b541 50%, #89c555 100%);
+    border: 1px solid #3c7fb1;
+    color: #000;
+    box-shadow: inset -1px -1px 2px rgba(0,0,0,0.1), inset 1px 1px 2px rgba(255,255,255,0.8), 0 1px 2px rgba(0,0,0,0.2);
+}
+
+    .xp-btn-submit:hover {
+        background: linear-gradient(180deg, #e3f5d3 0%, #a4da77 45%, #8bc257 50%, #9dcf6d 100%);
+    }
+
+    .xp-btn-submit:active {
+        background: linear-gradient(180deg, #76b541 0%, #90d15e 100%);
+        box-shadow: inset 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+.xp-btn-cancel {
+    background: linear-gradient(180deg, #f2f2f2 0%, #ebebeb 45%, #dddddd 50%, #cfcfcf 100%);
+    border: 1px solid #003c74;
+    color: #000;
+    box-shadow: inset -1px -1px 2px rgba(0,0,0,0.1), inset 1px 1px 2px rgba(255,255,255,0.8), 0 1px 2px rgba(0,0,0,0.2);
+}
+
+    .xp-btn-cancel:hover {
+        background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 45%, #e8e8e8 50%, #dfdfdf 100%);
+        color: #000;
+    }
+
+    .xp-btn-cancel:active {
+        background: linear-gradient(180deg, #dddddd 0%, #ebebeb 100%);
+        box-shadow: inset 2px 2px 4px rgba(0,0,0,0.3);
+    }

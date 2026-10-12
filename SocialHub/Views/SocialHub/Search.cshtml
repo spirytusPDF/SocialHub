@@ -1,0 +1,43 @@
+﻿@model List<Post>
+
+@{
+    Layout = "_Layout";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/posts.css" />
+}
+<div class="feed-container">
+    @if (Model != null && Model.Count>0)
+    {
+        @foreach (var post in Model)
+        {
+            <a asp-action="Details" asp-route-id="@post.Id">
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="header-info">
+                            <span class="post-author">@post.Author</span>
+                            <span class="post-date">@post.CreatedAt.ToString("MMM dd, yyyy - HH:mm")</span>
+                        </div>
+                    </div>
+
+                    <div class="post-body">
+                        <h3 class="post-title">@post.Title</h3>
+                        <p class="post-text">@post.Text</p>
+                    </div>
+
+                    <div class="post-comments">
+                        @{
+                            int commentCount = post.comments?.Count ?? 0;
+                        }
+                        <h4 class="comments-toggle">Comments (@commentCount)</h4>
+
+                    </div>
+                </div>
+            </a>
+        }
+    }
+    else
+    {
+        <h3>No items found...</h3>
+    }
+</div>
