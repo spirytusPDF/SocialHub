@@ -6,4 +6,4 @@
 4. Run the Application
 
 This app has a lot to develop yet:
-Better user-post binding, security development (password encryption), the separation on admin and user sides
+Better user-post binding, security development (password encryption), the better user control: user can change/delete only his/her posts...
