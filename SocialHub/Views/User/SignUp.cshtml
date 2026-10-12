@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "_LoginLayout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/auth.css" />
+}
+
+<div class="auth-wrapper">
+    <div class="xp-window auth-dialog">
+        <div class="xp-titlebar">
+            <div class="xp-title">
+                <span>Register New User</span>
+            </div>
+        </div>
+
+        <div class="xp-window-body">
+            <form action="/User/SignUp" method="post" class="xp-form">
+                <div asp-validation-summary="ModelOnly" class="xp-error-message"></div>
+                <p class="auth-instructions">Please enter your desired credentials to join SocialHub.</p>
+
+                <div class="xp-form-group">
+                    <label class="xp-label">Desired Username:</label>
+                    <input type="text" name="Login" class="xp-input" required />
+                </div>
+
+                <div class="xp-form-group">
+                    <label class="xp-label">User phone number:</label>
+                    <input type="text" name="PhoneNumber" class="xp-input" required />
+                </div>
+
+                <div class="xp-form-group">
+                    <label class="xp-label">Password:</label>
+                    <input type="password" name="Password" class="xp-input" required />
+                </div>
+
+                <div class="xp-form-group">
+                    <label class="xp-label">Confirm Password:</label>
+                    <input type="password" name="ConfirmPassword" class="xp-input" required />
+                </div>
+
+                <div class="xp-form-actions">
+                    <button type="submit" class="xp-btn-submit">Register</button>
+                    <a href="/User/Login" class="xp-btn-cancel">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

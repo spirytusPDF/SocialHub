@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SocialHub.Context;
 using SocialHub.Models;
+using System.Security.Claims;
 
 namespace SocialHub.Controllers
 {
@@ -28,8 +29,20 @@ namespace SocialHub.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([Bind("Id,Author,Title,Text,CreatedAt")] Post post)
         {
+           
+            if (post.Author == "")
+            { 
+            ModelState.Remove("Author");
+            ModelState.Remove("user");
+            ModelState.Remove("userId");
+            post.Author = User.Identity.Name;
+            post.userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            
+            }
+            post.CreatedAt = DateTime.Now;
             if (ModelState.IsValid)
             {
+               
                 _context.Add(post);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Posts));
@@ -54,6 +67,7 @@ namespace SocialHub.Controllers
 
             return View(post);
         }
+
         public async Task<IActionResult> Delete(int id)
         {
             var post = await _context.Posts.FindAsync(id);
@@ -121,17 +135,19 @@ namespace SocialHub.Controllers
         }
 
 
-
         private bool PostExists(int id)
         {
             return _context.Posts.Any(e => e.Id == id);
         }
 
 
+
         //Comment Section
         [HttpPost]
         public async Task<IActionResult> AddComment(Comment comment)
         {
+            if(comment.Author == "") {comment.Author = User.Identity.Name; }
+            
             comment.CreatedAt = DateTime.Now;
 
             _context.Add(comment);

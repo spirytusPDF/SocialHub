@@ -26,9 +26,18 @@
                 <input type="hidden" asp-for="CreatedAt" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")" />
 
                 <div class="xp-form-group">
-                    <label asp-for="Author" class="xp-label">Your Name:</label>
-                    <input asp-for="Author" class="xp-input" placeholder="e.g. John Doe" required />
-                    <span asp-validation-for="Author" class="text-danger"></span>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <p class="xp-label">@User.Identity.Name</p>
+
+                    }
+                    else
+                    {
+                        <label asp-for="Author" class="xp-label">@User.Identity.Name</label>
+                        <input asp-for="Author" class="xp-input" placeholder="e.g. John Doe" required />
+                        <span asp-validation-for="Author" class="text-danger"></span>
+                    }
+                    
                 </div>
 
                 <div class="xp-form-group">

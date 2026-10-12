@@ -21,9 +21,29 @@
             </form>
         </div>
 
-        <div class="newPost">
-            <a href="/SocialHub/Create"><img src="~/icons/picture.png" alt="AddImg" /></a>
+        <div class="user-menu">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="xp-dropdown">
+                    <button class="xp-dropbtn">Hey, @User.Identity.Name</button>
+                    <div class="xp-dropdown-content">
+                        <a href="/User/Logout" class="xp-logout-link">Log Off</a>
+                    </div>
+                </div>
+                <div class="newPost">
+                    <a href="/SocialHub/Create"><img src="~/icons/picture.png" alt="AddImg" title="New Post" /></a>
+                </div>
+            }
+            else
+            {
+				<a href="/User/Login" class="xp-btn-login">Log In</a>
+			
+				<div class="newPost">
+					<a href="/SocialHub/Create"><img src="~/icons/picture.png" alt="AddImg" /></a>
+				</div>
+            }
         </div>
+        
     </header>
     <div class="container">
         <main role="main" class="pb-3">

@@ -41,7 +41,12 @@
             <div class="add-comment-box">
                 <form asp-action="AddComment" method="post" class="comment-form">
                     <input type="hidden" name="PostId" value="@Model.Id" />
-                    <input type="text" name="Author" class="xp-input author-input" placeholder="Your Name" required />
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <p class="xp-label">@User.Identity.Name</p>
+
+                    }
+                    else{ <input type="text" name="Author" class="xp-input author-input" placeholder="Your Name" required />}
                     <input type="text" name="Text" class="xp-input text-input" placeholder="Write a comment..." required />
                     <button type="submit" class="xp-btn-comment">Post</button>
                 </form>

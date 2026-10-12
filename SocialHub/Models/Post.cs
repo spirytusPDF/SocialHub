@@ -9,5 +9,8 @@
         public DateTime CreatedAt { get; set; }
 
         public List<Comment>? comments { get; set; }
+
+        public int? userId {  get; set; }
+        public User? user { get; set; }
     }
 }
